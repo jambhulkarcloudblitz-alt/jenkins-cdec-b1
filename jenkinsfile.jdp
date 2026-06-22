@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('PULL'){
             steps {
-                echo 'PULL SUCCSESS'
+                git branch: 'devops', url: 'https://github.com/jambhulkarcloudblitz-alt/CDEC-studentapp.git'
             }
         }
         stage ('BUILD'){
