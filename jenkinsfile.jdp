@@ -8,12 +8,12 @@ pipeline {
         }
         stage ('BUILD'){
             steps {
-                echo 'BUILD SUCCESS'
+                sh 'mvn clean package -DskipTests'
             }
         }
         stage ('TEST'){
             steps {
-                sh 'mvn clean package -DskipTests'
+                echo 'BUILD SUCCESS'
                 }
         }
         stage ('DEPLOY'){
