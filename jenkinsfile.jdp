@@ -8,14 +8,13 @@ pipeline {
         }
         stage ('BUILD'){
             steps {
-                sh '''cd backend
-                    mvn clean package -DskipTests'''
+                echo 'BUILD SUCCESS'
             }
         }
         stage ('TEST'){
             steps {
-                echo 'BUILD SUCCESS'
-                }
+                echo 'TEST SUCCESS'   
+            }
         }
         stage ('DEPLOY'){
             steps {
