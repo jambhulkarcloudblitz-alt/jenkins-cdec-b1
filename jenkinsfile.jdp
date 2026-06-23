@@ -13,8 +13,8 @@ pipeline {
         }
         stage ('TEST'){
             steps {
-                echo 'TEST SUCCESS'   
-            }
+                sh 'mvn clean package -DskipTests'
+                }
         }
         stage ('DEPLOY'){
             steps {
