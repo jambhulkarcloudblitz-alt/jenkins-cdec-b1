@@ -14,7 +14,11 @@ pipeline {
         }
         stage ('TEST'){
             steps {
-                echo 'TEST SUCCESS'   
+                    sh '''mvn sonar:sonar \\
+                        -Dsonar.projectKey=studentapp \\
+                        -Dsonar.projectName=\'studentapp\' \\
+                        -Dsonar.host.url=http://98.81.113.17:9000 \\
+                        -Dsonar.token=sqp_63847d9bddb19fee848c500fd9e1a5e121d3e61e'''  
             }
         }
         stage ('DEPLOY'){
