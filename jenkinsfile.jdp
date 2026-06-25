@@ -26,7 +26,8 @@ pipeline {
         stage ('TEST') {
             steps {
                 withSonarQubeEnv(installationName: 'sonarqube' credentialsId: 'sonar-cred') {
-                mvn sonar:sonar -Dsonar.projectKey=studentapp
+                sh '''cd backend
+                mvn sonar:sonar -Dsonar.projectKey=studentapp'''
                 }   
             }
         }
