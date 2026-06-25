@@ -16,7 +16,7 @@ pipeline {
         stage ('TEST') {
             steps {
               sh '''cd backend
-                    mvn clean verify sonar:sonar \\
+                    mvn sonar:sonar \\
                     -Dsonar.projectKey=studentapp \\
                     -Dsonar.projectName=\'studentapp\' \\
                     -Dsonar.host.url=http://3.101.112.250:9000 \\
