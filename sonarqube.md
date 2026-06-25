@@ -46,9 +46,10 @@ useradd sonar -m
 chown sonar:sonar -R /opt/sonar
 su sonar
 ./sonar.sh start
-cd /opt/sonar/bin/linux-x86-64
+  cd /opt/sonar/bin/linux-x86-64
 ./sonar.sh status 
 ```
 
 
-sqp_63847d9bddb19fee848c500fd9e1a5e121d3e61e
+
+
