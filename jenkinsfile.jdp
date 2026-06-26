@@ -50,9 +50,9 @@ pipeline {
             }
         }
         
-        stage ('DEPLOY'){
+        stage ('S3-Upload'){
             steps {
-                echo 'DEPLOY SUCCESS'
+                sh 'aws s3 cp backend/target/student-registration-backend-0.0.1-SNAPSHOT.jar s3://student-app-3197/key'
             }
         }
         
