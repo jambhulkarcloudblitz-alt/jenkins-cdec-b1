@@ -13,7 +13,7 @@ pipeline {
                 '''
             }
         }
-        stages ('APPROVAL') {
+        stage ('APPROVAL') {
             steps {
                 timeout(30) {
                     input message : 'Approval is Required. Shall we proceed? , ok: approved'
