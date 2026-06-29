@@ -6,25 +6,20 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/jambhulkarcloudblitz-alt/eks-infra-terraform.git'
             }
         }
-        stage ('TERRAFOM-PLAN') {
+        stage ('PLAN') {
             steps {
-                sh '''terraform init
-                      terraform plan
-                '''
+                sh '''terraform init 
+                        terraform plan'''
             }
         }
         stage ('APPROVAL') {
             steps {
-                timeout(30) {
-                    input message : 'Approval is Required. Shall we proceed? , ok: approved'
-                 }
-                
+                input 'Shall we proceed, ok: Approve'
             }
         }
-        stage ('TERRAFORM-APPLLY') {
+        stage ('APPLY') {
             steps {
-                sh '''terraform apply --auto-approve'''
-                
+                sh 'terraform apply --auto-approve'
             }
         }
     }
